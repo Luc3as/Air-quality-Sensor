@@ -45,5 +45,7 @@ I am taking 6 readings, calculate average and then print and publish data, so se
 
 ## Burning the firmware
 I precompiled firmware for Wemos D1 mini you can download it here [![GitHub version](https://img.shields.io/github/release/Luc3as/Air-quality-Sensor.svg)](https://github.com/Luc3as/Air-quality-Sensor/releases/latest)
+
 You can use attached burner from easy esp, you just have to select COM port of ESP and select burn.
+
 ![Burning the firmware](https://github.com/Luc3as/Air-quality-Sensor/blob/master/Docs/burning.png?raw=true)
