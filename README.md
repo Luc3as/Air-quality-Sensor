@@ -49,3 +49,18 @@ I precompiled firmware for Wemos D1 mini you can download it here [![GitHub vers
 You can use attached burner from easy esp, you just have to select COM port of ESP and select burn.
 
 ![Burning the firmware](https://github.com/Luc3as/Air-quality-Sensor/blob/master/Docs/burning.png?raw=true)
+
+## HomeAssistant example configuration
+This example shows sensor configuration for reading ppm values, and it shows other values as json attributes so it can be viewed after opening sensor details. 
+```python
+# CO2 sensor
+  - platform: mqtt
+    state_topic: 'stat/air-quality-monitor'
+    name: 'CO2 sensor'
+    unit_of_measurement: 'ppm'
+    value_template: '{{ value_json.eCO2 }}'
+    json_attributes:
+      - TVOC
+      - temperature
+```
+
