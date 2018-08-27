@@ -204,11 +204,14 @@ void setup() {
   } else {
   }
 
+
+
   //calibrate temperature sensor
   while(!ccs.available()) {
     float temp = ccs.calculateTemperature();
     ccs.setTempOffset(temp - 25.0);
   }
+  Wire.setClockStretchLimit( 460L );
   ccs.setDriveMode(CCS811_DRIVE_MODE_10SEC);
 } // End Setup
 
@@ -319,7 +322,7 @@ void loop() {
         colorWipe(pixels.Color(255, 0, 0), 50);
       } else if (avgeCO2 < 1500 && avgeCO2 >= 1000 ) {
         colorWipe(pixels.Color(255, 119, 0), 50);
-      } else if (avgeCO2 < 1000 ) {
+      } else if (avgeCO2 < 1000  && avgeCO2 > 0 ) {
         colorWipe(pixels.Color(0, 255, 0), 50);
       } else {
         colorWipe(pixels.Color(0, 0, 0), 50);
